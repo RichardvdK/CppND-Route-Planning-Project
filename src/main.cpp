@@ -27,7 +27,7 @@ static std::optional<std::vector<std::byte>> ReadFile(const std::string &path)
     return std::move(contents);
 }
 
-float getCoordinate(const std::string& name) {
+float InputCoordinate(const std::string& name) {
     float coordinate;
     do {
         std::cout << "Please enter the " << name << " in the range [0, 100]: ";
@@ -66,10 +66,10 @@ int main(int argc, const char **argv)
     // RoutePlanner object below in place of 10, 10, 90, 90.
     float start_x, start_y, end_x, end_y;
 
-    start_x = getCoordinate("start x coordinate");
-    start_y = getCoordinate("start y coordinate");
-    end_x = getCoordinate("end x coordinate");
-    end_y = getCoordinate("end y coordinate");
+    start_x = InputCoordinate("start x coordinate");
+    start_y = InputCoordinate("start y coordinate");
+    end_x = InputCoordinate("end x coordinate");
+    end_y = InputCoordinate("end y coordinate");
 
     std::cout << "Input coordinates: (" << start_x << ", " << start_y << ") and (" << end_x << ", " << end_y << ")\n";
 
